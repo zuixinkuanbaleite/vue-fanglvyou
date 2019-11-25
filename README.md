@@ -8,6 +8,18 @@
 - 代码，简洁，易维护 
 - 兼容大部分浏览器 
 - 性能优化 
+
+
+
+
+# 项目准备
+- 导入了reset.css，初始化了项目的一些基本样式。
+- 因为是移动app，所以需要在index.html里面需要对meta标签进行修改
+···
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+···
+intial-scale:页面首次被显示是可视区域的缩放级别，取值1.0则页面按实际尺寸显示，无任何缩放 maximum-scale=1.0, minimum-scale=1.0;可视区域的缩放级别， maximum-scale用户可将页面放大的程序，1.0将禁止用户放大到实际尺寸之上。 user-scalable:是否可对页面进行缩放，no 禁止缩放
 ## 项目结构部分 
 ### Header部分 
 - 引入 Iconfont 
@@ -30,4 +42,10 @@
 - 递归组件实现详情列表 
 - 画廊动画效果封装 
 
+- 样式穿透：突破scope的限制,由于scope的限制，所以定义不起作用，使用/deep/标签可以突破scope的限制。
+···
+.wrapper /deep/ .swiper-pagination-bullet-active{
+    background: #fff;
+}
+···
 [项目源码](https://github.com/zuixinkuanbaleite/vue-fanglvyou)
